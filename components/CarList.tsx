@@ -55,7 +55,7 @@ const CarList = async () => {
 
           <div className="flex justify-between items-center">
             <p>{car.price} $</p>
-            <Button>Rent Now !</Button>
+            <Button>Rent Now</Button>
           </div>
         </div>
       ))}
