@@ -1,0 +1,81 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+model Car {
+  id        String     @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  type      String
+  price     Float
+  fuel      String
+  capacity  Int
+  gearbox   String
+  images    String[]
+  reviews   Review[]
+  rentals   Rental[]
+  likes     Like[]
+  createdAt DateTime   @default(now())
+}
+
+
+model Review {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  rating    Int
+  comment   String
+  createdAt DateTime  @default(now())
+  userId    String    // من Clerk
+  carId     String    @db.ObjectId
+  car       Car       @relation(fields: [carId], references: [id])
+}
+
+
+model BillingInfo {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  phone     String
+  address   String
+  city      String
+  userId    String    @unique // من Clerk
+}
+
+
+model Rental {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  pickUp    DateTime
+  dropOff   DateTime
+  location  String
+  total     Float
+  userId    String
+  carId     String    @db.ObjectId
+  car       Car       @relation(fields: [carId], references: [id])
+  payment   Payment?
+  createdAt DateTime  @default(now())
+}
+
+
+model Payment {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  method    String
+  status    String    @default("pending")
+  amount    Float
+  rentalId  String    @unique @db.ObjectId
+  rental    Rental    @relation(fields: [rentalId], references: [id])
+  createdAt DateTime  @default(now())
+}
+
+
+model Like {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String
+  carId     String    @db.ObjectId
+  car       Car       @relation(fields: [carId], references: [id])
+  createdAt DateTime  @default(now())
+
+  @@unique([userId, carId])
+}
