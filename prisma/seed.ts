@@ -59,6 +59,24 @@ async function main() {
         gearbox: "Automatic",
         images: ["/uploads/image1.png"],
       },
+      {
+        name: "Mercedes-Benz C-Class",
+        type: "Sedan",
+        price: 48000,
+        fuel: "Diesel",
+        capacity: 5,
+        gearbox: "Automatic",
+        images: ["/uploads/image1.png"],
+      },
+      {
+        name: "Lamborghini Huracan",
+        type: "Sports",
+        price: 80000,
+        fuel: "Petrol",
+        capacity: 2,
+        gearbox: "Automatic",
+        images: ["/uploads/image1.png"],
+      },
     ],
   });
 

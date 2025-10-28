@@ -1,5 +1,4 @@
 import CarList from "@/components/CarList";
-import { Button } from "primereact/button";
 
 export default function Home() {
   return (
