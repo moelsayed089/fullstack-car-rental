@@ -5,6 +5,8 @@ import { Button } from "primereact/button";
 
 const CarList = async () => {
   const cars = await getAllCars();
+
+  if (!cars) return <div className="p-6 text-center">Car not found</div>;
   return (
     <div className="container mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 h-50 ">
       {cars?.map((car) => (
@@ -15,7 +17,9 @@ const CarList = async () => {
           <Link href={`/car/${car.id}`}>
             <div className="flex justify-between  mb-3">
               <div className="flex flex-col mb-2">
-                <p className="font-medium tracking-wide">{car.name}</p>
+                <p className="font-normal font-['Montserrat']  tracking-wide">
+                  {car.name}
+                </p>
                 <p className="text-md text-gray-400">{car.type}</p>
               </div>
               <p className="text-red-500">like</p>

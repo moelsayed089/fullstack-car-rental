@@ -1,4 +1,4 @@
-import CarList from "@/components/CarList";
+import CarList from "@/components/car/CarList";
 
 export default function Home() {
   return (
