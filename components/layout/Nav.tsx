@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 const Nav = () => {
   return (
     <div className="container mt-5">
-      <div className="flex flex-col md:flex-row gap-3 items-center p-5 border rounded-md shadow-md border-gray-300/70">
+      <div className="flex flex-col md:flex-row gap-3 items-center p-5 border bg-white rounded-md shadow-md border-gray-300/70">
         <div className="flex gap-3 justify-between items-center w-full md:w-auto">
           <Logo />
           <div className="flex gap-3 items-center md:hidden">

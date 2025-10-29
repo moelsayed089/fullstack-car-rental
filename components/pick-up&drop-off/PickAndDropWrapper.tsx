@@ -7,22 +7,22 @@ import TimePickerAndDrop from "./TimePickerAndDrop";
 import Icon from "../Icon";
 
 const locations = [
-  { label: "Location 1", value: "1" },
-  { label: "Location 2", value: "2" },
-  { label: "Location 3", value: "3" },
+  { label: "Cairo", value: "1" },
+  { label: "Benha", value: "2" },
+  { label: "Alex", value: "3" },
 ];
 const dates = [
   {
-    label: "2023-09-01",
-    value: "2023-09-01",
+    label: "10-11-2025",
+    value: "10-11-2025",
   },
   {
-    label: "2023-09-02",
-    value: "2023-09-02",
+    label: "11-11-2025",
+    value: "11-11-2025",
   },
   {
-    label: "2023-09-03",
-    value: "2023-09-03",
+    label: "12-11-2025",
+    value: "12-11-2025",
   },
 ];
 const times = [

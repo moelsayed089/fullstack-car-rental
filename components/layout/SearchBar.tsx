@@ -4,7 +4,7 @@ import Icon from "../Icon";
 const SearchBar = () => {
   return (
     <div className="md:rounded-pill">
-      <div className="flex bg-gray-300  items-center gap-2 md:gap-5 w-full py-2 px-3 border border-content-dimmed rounded-[10px] ">
+      <div className="flex bg-gray-300/40  items-center gap-2 md:gap-5 w-full py-2 px-3 border border-content-dimmed rounded-[10px] ">
         <Icon name="search" />
         <InputText
           type="text"
