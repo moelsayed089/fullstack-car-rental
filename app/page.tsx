@@ -1,8 +1,12 @@
 import CarList from "@/components/car/CarList";
+import PickAndDropLable from "@/components/pick-up&drop-off/PickAndDropLable";
+import PickAndDropWrapper from "@/components/pick-up&drop-off/PickAndDropWrapper";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen ">
+    <div className=" container mt-10 ">
+      {/* <PickAndDropLable title="Pick up" /> */}
+      <PickAndDropWrapper />
       {/* <Button label="Click me" icon="pi pi-check" /> */}
       {/* <CarList /> */}
     </div>
