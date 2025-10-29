@@ -68,7 +68,7 @@ function PickAndDropWrapper() {
   return (
     <div className="flex flex-col md:flex-row gap-2 justify-between items-center">
       {/* Pickup */}
-      <div className="w-full md:w-[50%] py-4 px-6 bg-white  rounded-md">
+      <div className="w-full md:w-[45%] py-4 px-6 bg-white  rounded-md">
         <PickAndDropLable title="Pick-Up" />
         <div className="grid grid-cols-3 gap-2  ">
           <LocationPickerAndDrop
@@ -101,9 +101,9 @@ function PickAndDropWrapper() {
       </div>
 
       {/* Drop-off */}
-      <div className="w-full md:w-[50%] py-4 px-6 bg-white  rounded-md">
+      <div className="w-full md:w-[45%] py-4 px-6 bg-white  rounded-md">
         <PickAndDropLable title="Drop-Off" />
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-3 gap-2">
           <LocationPickerAndDrop
             label="Locations"
             value={formData.dropoff.location}
