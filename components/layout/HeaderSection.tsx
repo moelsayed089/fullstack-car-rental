@@ -8,6 +8,7 @@ const HeaderSection = () => {
       <div className="container mt-5">
         <div>
           <div className="flex flex-col md:flex-row  gap-4 ">
+            {/* banner image 1 */}
             <div className="relative w-full ">
               <h1 className="absolute text-xl md:text-2xl lg:text-3xl top-2 md:top-4 left-5 ">
                 The Best Platform
@@ -29,6 +30,7 @@ const HeaderSection = () => {
                 className="bg-blue-600/80 rounded-md "
               />
             </div>
+            {/* banner image 2 */}
             <div className="relative w-full hidden md:block ">
               <h1 className="absolute text-xl md:text-2xl lg:text-3xl top-2 md:top-4 left-5 ">
                 Easy way to rent a
