@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import "./globals.css";
 import "primereact/resources/themes/lara-light-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import Nav from "@/components/layout/Nav";
 import HeaderSection from "@/components/layout/HeaderSection";
+import "./globals.css";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
