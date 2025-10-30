@@ -4,7 +4,6 @@ import "primereact/resources/themes/lara-light-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import Nav from "@/components/layout/Nav";
-import HeaderSection from "@/components/layout/HeaderSection";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -28,7 +27,6 @@ export default function RootLayout({
         className={`${montserrat.variable} ${montserrat.variable} antialiased`}
       >
         <Nav />
-        <HeaderSection />
         {children}
       </body>
     </html>

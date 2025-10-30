@@ -5,7 +5,7 @@ import image2 from "../../assets/image/BG2.png";
 const HeaderSection = () => {
   return (
     <>
-      <div className="container mt-5">
+      <div className=" mt-5">
         <div>
           <div className="flex flex-col md:flex-row  gap-4 ">
             {/* banner image 1 */}
