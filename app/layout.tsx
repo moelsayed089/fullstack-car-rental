@@ -6,6 +6,7 @@ import "primeicons/primeicons.css";
 import Nav from "@/components/layout/Nav";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -27,9 +28,11 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${montserrat.variable} antialiased`}
       >
-        <Nav />
-        {children}
-        <Footer />
+        <ClerkProvider>
+          <Nav />
+          {children}
+          <Footer />
+        </ClerkProvider>
       </body>
     </html>
   );
