@@ -1,15 +1,24 @@
 import { getCarById } from "@/actions/car.action";
-
-const CarDetails = async ({ params }: { params: { id: string } }) => {
+import CarInfo from "@/components/car/CarDetails";
+import CarImage from "@/components/car/CarImage";
+import Reviews from "@/components/review/Reviews";
+const CarDetailsPage = async ({ params }: { params: { id: string } }) => {
   const { id } = await params;
   const CarDetails = await getCarById(id);
   if (!CarDetails) return <div className="p-6 text-center">Car not found</div>;
   return (
-    <div>
-      car details {id}
-      <h1>hello {CarDetails?.name}</h1>
-    </div>
+    <>
+      <section className="flex flex-col">
+        <div className="bg-gray-100 mt-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-5 max-w-7xl mx-auto">
+            <CarImage car={CarDetails} />
+            <CarInfo car={CarDetails} />
+          </div>
+          <Reviews />
+        </div>
+      </section>
+    </>
   );
 };
 
-export default CarDetails;
+export default CarDetailsPage;
