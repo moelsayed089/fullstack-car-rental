@@ -47,5 +47,8 @@ export const createUserReview = async (
 };
 
 export const getReviewsByCarId = async (carId: string) => {
-  return await prisma.review.findMany({ where: { carId } });
+  return await prisma.review.findMany({
+    where: { carId },
+    orderBy: { createdAt: "desc" },
+  });
 };

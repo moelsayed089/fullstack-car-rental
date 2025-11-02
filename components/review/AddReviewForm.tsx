@@ -11,10 +11,11 @@ import { useParams } from "next/navigation";
 import InputTextWrapper from "../common/InputTextWrapper";
 import InputTextareaWrapper from "../common/InputTextareaWrapper";
 import Spinner from "../common/Spinner";
-
+import { useRouter } from "next/navigation";
 const AddReviewForm = ({ userId }: { userId: string | null }) => {
   const [isLoading, setIsLoading] = useState(false);
   const params = useParams();
+  const router = useRouter();
   const carId = params.id as string;
   const { user } = useUser();
 
@@ -36,6 +37,7 @@ const AddReviewForm = ({ userId }: { userId: string | null }) => {
       await createUserReview(reviewData, carId, userId!);
       console.log("Review created:", reviewData);
       form.reset();
+      router.refresh();
     } catch (error) {
       console.error("Error creating review:", error);
     } finally {

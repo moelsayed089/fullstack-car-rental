@@ -14,7 +14,7 @@ const CarDetailsPage = async ({ params }: { params: { id: string } }) => {
             <CarImage car={CarDetails} />
             <CarInfo car={CarDetails} />
           </div>
-          <Reviews />
+          <Reviews carId={id} />
         </div>
       </section>
     </>
