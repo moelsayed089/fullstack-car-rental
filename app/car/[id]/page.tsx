@@ -9,7 +9,7 @@ const CarDetailsPage = async ({ params }: { params: { id: string } }) => {
   return (
     <>
       <section className="flex flex-col">
-        <div className="bg-gray-100 mt-5">
+        <div className="bg-gray-100 mt-22">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-5 max-w-7xl mx-auto">
             <CarImage car={CarDetails} />
             <CarInfo car={CarDetails} />
