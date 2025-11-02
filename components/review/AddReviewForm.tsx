@@ -7,11 +7,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ReviewSchema, ReviewValue } from "@/schema/ReviewSchema";
 import { useUser } from "@clerk/nextjs";
 import { createUserReview } from "@/actions/car.action";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import InputTextWrapper from "../common/InputTextWrapper";
 import InputTextareaWrapper from "../common/InputTextareaWrapper";
 import Spinner from "../common/Spinner";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
+
 const AddReviewForm = ({ userId }: { userId: string | null }) => {
   const [isLoading, setIsLoading] = useState(false);
   const params = useParams();
@@ -19,13 +20,16 @@ const AddReviewForm = ({ userId }: { userId: string | null }) => {
   const carId = params.id as string;
   const { user } = useUser();
 
+  const fullName = `${user?.firstName ?? ""} ${user?.lastName ?? ""}`.trim();
+
   const form = useForm<ReviewValue>({
     resolver: zodResolver(ReviewSchema),
     defaultValues: {
       rating: 0,
       comment: "",
       title: "",
-      name: user?.firstName ?? "",
+      name: fullName,
+      imageUrl: user?.imageUrl,
     },
   });
 
@@ -35,7 +39,6 @@ const AddReviewForm = ({ userId }: { userId: string | null }) => {
 
     try {
       await createUserReview(reviewData, carId, userId!);
-      console.log("Review created:", reviewData);
       form.reset();
       router.refresh();
     } catch (error) {
@@ -59,7 +62,7 @@ const AddReviewForm = ({ userId }: { userId: string | null }) => {
             register={form.register("title")}
           />
           <p
-            className={`text-sm  transition-all ${
+            className={`text-sm transition-all ${
               form.formState.errors.title ? "text-red-500" : "text-transparent"
             }`}
           >
@@ -101,18 +104,16 @@ const AddReviewForm = ({ userId }: { userId: string | null }) => {
           </p>
         </div>
 
-        <div className="flex justify-end gap-3">
+        <div className="flex justify-end">
           <button
             type="submit"
             disabled={isLoading}
-            className="bg-blue-600 px-5 py-2 rounded-md text-white hover:bg-blue-700 hover:cursor-pointer"
+            className="bg-blue-600 px-5 py-2 rounded-md text-white hover:bg-blue-700 disabled:opacity-70"
           >
             {isLoading ? (
-              <>
-                <div className="flex items-center">
-                  <Spinner className="mr-2" /> Creating.
-                </div>
-              </>
+              <div className="flex items-center">
+                <Spinner className="mr-2" /> Creating...
+              </div>
             ) : (
               "Create Review"
             )}

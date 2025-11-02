@@ -30,6 +30,7 @@ model Review {
   name      String
   title String?
   comment   String
+  imageUrl String?
   createdAt DateTime  @default(now())
   userId    String    // من Clerk
   carId     String    @db.ObjectId

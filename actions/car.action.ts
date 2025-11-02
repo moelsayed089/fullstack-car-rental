@@ -42,6 +42,7 @@ export const createUserReview = async (
       carId,
       userId,
       name: data.name,
+      imageUrl: data.imageUrl,
     },
   });
 };

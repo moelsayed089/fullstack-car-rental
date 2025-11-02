@@ -7,6 +7,7 @@ import { getReviewsByCarId } from "@/actions/car.action";
 const Reviews = async ({ carId }: { carId: string }) => {
   const { userId } = await auth();
   const reviews = await getReviewsByCarId(carId);
+  if (!reviews) return <div className="p-6 text-center">Review not found</div>;
 
   return (
     <div className="max-w-7xl mx-auto p-5">
@@ -33,7 +34,7 @@ const Reviews = async ({ carId }: { carId: string }) => {
                 <Image
                   width={100}
                   height={100}
-                  src={userAvatar}
+                  src={review.imageUrl || userAvatar}
                   alt="user avatar"
                   className="w-full h-full object-cover rounded-full"
                 />
