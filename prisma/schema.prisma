@@ -27,6 +27,8 @@ model Car {
 model Review {
   id        String    @id @default(auto()) @map("_id") @db.ObjectId
   rating    Int
+  name      String
+  title String?
   comment   String
   createdAt DateTime  @default(now())
   userId    String    // من Clerk

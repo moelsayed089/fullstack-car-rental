@@ -1,6 +1,10 @@
 import Image from "next/image";
 import userAvatar from "../../assets/userAvatar.png";
-const Reviews = () => {
+import AddReviewForm from "./AddReviewForm";
+import { auth } from "@clerk/nextjs/server";
+const Reviews = async () => {
+  const { userId } = await auth();
+
   return (
     <>
       <div className="  max-w-7xl mx-auto p-5">
@@ -11,9 +15,9 @@ const Reviews = () => {
               4
             </span>
 
-            <button className="ml-auto text-sm font-semibold text-blue-600 hover:cursor-pointer">
-              Create Review
-            </button>
+            <div className="ml-auto">
+              <AddReviewForm userId={userId} />
+            </div>
           </div>
 
           <div className="space-y-6">
