@@ -5,7 +5,7 @@ export default function Error() {
     <>
       <html>
         <body>
-          <main className="grid items-center bg-white  px-6 py-24 sm:py-32 lg:px-8">
+          <main className="grid items-center bg-white  px-6 py-24 sm:py-32 lg:px-8 mt-24">
             <div className="text-center">
               <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance text-black sm:text-7xl ">
                 OOPS , Something Went Wrong !
