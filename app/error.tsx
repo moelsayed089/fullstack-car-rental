@@ -5,9 +5,9 @@ export default function Error() {
     <>
       <html>
         <body>
-          <main className="grid min-h-[calc(100vh-4rem)] place-items-center bg-white dark:bg-black  px-6 py-24 sm:py-32 lg:px-8">
+          <main className="grid items-center bg-white  px-6 py-24 sm:py-32 lg:px-8">
             <div className="text-center">
-              <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance text-black sm:text-7xl dark:text-white">
+              <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance text-black sm:text-7xl ">
                 OOPS , Something Went Wrong !
               </h1>
               <p className="mt-6 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
