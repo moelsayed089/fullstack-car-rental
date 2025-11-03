@@ -5,7 +5,7 @@ function Logo() {
   return (
     <Link href="/" className="w-[108px] md:w-fit">
       <Image
-        src={"/logo.png"}
+        src={"/image/logo.png"}
         width={1200}
         height={1500}
         alt="logo image"
