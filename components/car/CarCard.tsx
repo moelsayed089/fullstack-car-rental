@@ -33,7 +33,7 @@ const CarCard = ({ car }: { car: ICar }) => {
           width={700}
           height={200}
           alt={car.name}
-          className="rounded-md mb-3 object-cover p-5"
+          className="rounded-md mb-3 h-[110px] object-center  p-5"
         />
         <div className="absolute bottom-0 right-0 w-full h-full bg-linear-to-t from-white/50 to-transparent blur-[px]">
           {" "}

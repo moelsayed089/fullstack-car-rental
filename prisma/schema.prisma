@@ -32,7 +32,7 @@ model Review {
   comment   String
   imageUrl String?
   createdAt DateTime  @default(now())
-  userId    String    // من Clerk
+  userId    String    
   carId     String    @db.ObjectId
   car       Car       @relation(fields: [carId], references: [id])
 }
@@ -44,7 +44,7 @@ model BillingInfo {
   phone     String
   address   String
   city      String
-  userId    String    @unique // من Clerk
+  userId    String    @unique 
 }
 
 

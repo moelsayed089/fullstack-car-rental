@@ -11,16 +11,16 @@ const CarImage = ({ car }: { car: ICar }) => {
         </h1>
         <div className="flex items-center justify-center">
           <Image
-            width={500}
-            height={400}
-            className=" rounded-md relative mt-14 z-10 "
+            width={400}
+            height={300}
+            className=" rounded-md h-full object-center relative mt-14 z-10 "
             src={car.images[0]}
             alt="Main car"
           />
         </div>
 
         <Image
-          width={800}
+          width={500}
           height={400}
           className="absolute inset-0 w-full h-full object-cover "
           src={pattern}
@@ -34,7 +34,7 @@ const CarImage = ({ car }: { car: ICar }) => {
             key={index}
             width={200}
             height={200}
-            className="w-full object-cover rounded-md bg-blue-500 p-4"
+            className="w-full h-full md:h-[110px] object-center rounded-sm bg-gray-100 p-4"
             src={img}
             alt={`Car ${index}`}
           />
