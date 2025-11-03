@@ -1,6 +1,4 @@
 import Image from "next/image";
-import image1 from "../../assets/image/BG.png";
-import image2 from "../../assets/image/BG2.png";
 
 const HeaderSection = () => {
   return (
@@ -23,7 +21,7 @@ const HeaderSection = () => {
               </p>
 
               <Image
-                src={image1}
+                src={"/image/BG.png"}
                 width={570}
                 height={600}
                 alt="header image"
@@ -44,7 +42,7 @@ const HeaderSection = () => {
               </p>
 
               <Image
-                src={image2}
+                src={"/image/BG2.png"}
                 width={600}
                 height={600}
                 alt="header image"
