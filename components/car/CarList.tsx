@@ -6,11 +6,10 @@ import { ICar } from "@/types/car";
 const CarList = async ({ page = 1 }: { page?: number }) => {
   const { cars, totalPages } = await getAllCars(page, 4);
 
-  if (!cars.length)
-    return (
-      <div className="p-6 text-center text-gray-500">No cars available</div>
-    );
-
+  if (!cars || !cars.length) {
+    console.log("⚠️ No cars or Prisma failed to connect");
+    return <div>No cars found</div>;
+  }
   return (
     <>
       <h1 className="text-sm ml-1 font-medium text-gray-400 mt-6">

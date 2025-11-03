@@ -1,7 +1,6 @@
 import { ICar } from "@/types/car";
 import Link from "next/link";
 import PrimaryButton from "../common/PrimaryButton";
-import { format } from "path";
 import { formatNumber } from "@/utils/formatNumber";
 
 const CarInfo = ({ car }: { car: ICar }) => {

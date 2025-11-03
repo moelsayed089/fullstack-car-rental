@@ -1,4 +1,3 @@
-// app/page.tsx
 import CarList from "@/components/car/CarList";
 import HeaderSection from "@/components/layout/HeaderSection";
 import PickAndDropWrapper from "@/components/pick-up&drop-off/PickAndDropWrapper";
@@ -6,10 +5,9 @@ import PickAndDropWrapper from "@/components/pick-up&drop-off/PickAndDropWrapper
 export default async function Home({
   searchParams,
 }: {
-  searchParams: Promise<{ page?: string }>;
+  searchParams?: { page?: string };
 }) {
-  const params = await searchParams;
-  const page = Number(params.page) || 1;
+  const page = Number(searchParams?.page) || 1;
 
   return (
     <div className="container">
