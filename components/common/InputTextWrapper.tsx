@@ -6,9 +6,11 @@ interface InputTextWrapperProps {
   placeholder: string;
   className?: string;
   register?: UseFormRegisterReturn;
+  value?: string;
 }
 
 const InputTextWrapper = ({
+  value,
   type,
   placeholder,
   className,
@@ -16,6 +18,7 @@ const InputTextWrapper = ({
 }: InputTextWrapperProps) => {
   return (
     <InputText
+      value={value}
       type={type}
       placeholder={placeholder}
       className={`w-full bg-gray-100 px-3 py-2 rounded-md focus:outline-0 text-sm md:text-base outline-none shadow-none border-none focus:border-none focus:ring-0 ${className}`}

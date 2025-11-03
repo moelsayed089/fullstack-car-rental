@@ -53,3 +53,11 @@ export const getReviewsByCarId = async (carId: string) => {
     orderBy: { createdAt: "desc" },
   });
 };
+
+export const deleteReview = async (id: string, userId: string) => {
+  const review = await prisma.review.findUnique({ where: { id } });
+  if (!review) throw new Error("Review not found");
+  if (review.userId !== userId) throw new Error("Not authorized");
+
+  return await prisma.review.delete({ where: { id } });
+};

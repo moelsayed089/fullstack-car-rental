@@ -5,7 +5,7 @@ const IconNav = () => {
   return (
     <div className=" ">
       {/* <Icon name="heart" /> */}
-      <div className=" bg-gray-100 flex items-center gap-3 px-3 py-2 rounded-md hover:cursor-pointer">
+      <div className=" bg-gray-100 text-black flex items-center gap-3 px-3 py-2 rounded-md hover:cursor-pointer">
         <SignedIn>
           <UserButton />
         </SignedIn>

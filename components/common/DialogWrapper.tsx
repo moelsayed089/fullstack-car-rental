@@ -24,7 +24,7 @@ const DialogWrapper = ({
         visible={visible}
         header={label}
         headerClassName="px-5 py-3"
-        contentClassName="p-5 "
+        contentClassName="px-5 pb-5"
         className="w-[90vw] md:w-[50vw]"
         onHide={() => {
           if (!visible) return;

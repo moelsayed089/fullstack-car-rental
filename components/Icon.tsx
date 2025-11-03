@@ -6,6 +6,8 @@ import filter from "../assets/icons/filter.svg";
 import menu from "../assets/icons/menu.svg";
 import close from "../assets/icons/close.svg";
 import swap from "../assets/icons/Swap.svg";
+import deleteIcon from "../assets/icons/delete.svg";
+import addIcon from "../assets/icons/Add square.svg";
 import Image from "next/image";
 
 type IconProps = {
@@ -17,7 +19,9 @@ type IconProps = {
     | "filter"
     | "menu"
     | "close"
-    | "swap";
+    | "swap"
+    | "deleteicon"
+    | "addicon";
   size?: number;
   className?: string;
 };
@@ -31,6 +35,8 @@ const iconMap: Record<IconProps["name"], string> = {
   menu: menu,
   close: close,
   swap: swap,
+  deleteicon: deleteIcon,
+  addicon: addIcon,
 };
 
 const Icon: React.FC<IconProps> = ({ name, className = "" }) => {

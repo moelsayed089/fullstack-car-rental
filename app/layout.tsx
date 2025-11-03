@@ -6,6 +6,8 @@ import "primeicons/primeicons.css";
 import Nav from "@/components/layout/Nav";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
+import { Toaster } from "react-hot-toast";
+
 import { ClerkProvider } from "@clerk/nextjs";
 
 const montserrat = Montserrat({
@@ -31,6 +33,7 @@ export default function RootLayout({
         <ClerkProvider>
           <Nav />
           {children}
+          <Toaster />
           <Footer />
         </ClerkProvider>
       </body>
