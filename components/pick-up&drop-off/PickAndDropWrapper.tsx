@@ -66,7 +66,7 @@ function PickAndDropWrapper() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-2 mt-5 justify-between items-center">
+    <div className="flex flex-col md:flex-row gap-2 mt-5 mb-5 justify-between items-center">
       {/* Pickup */}
       <div className="w-full md:w-[45%] py-4 px-6 bg-white  rounded-md">
         <PickAndDropLable title="Pick-Up" />
