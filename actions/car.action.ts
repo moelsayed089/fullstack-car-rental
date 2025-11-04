@@ -8,7 +8,7 @@ export const getAllCars = async () => {
     orderBy: { createdAt: "desc" },
   });
 
-  return cars;
+  return { cars };
 };
 
 export const getCarById = async (id: string) => {
