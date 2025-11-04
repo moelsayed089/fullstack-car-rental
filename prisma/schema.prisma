@@ -16,10 +16,8 @@ model Car {
   fuel      String
   capacity  Int
   gearbox   String
-  
   reviews   Review[]
   rentals   Rental[]
-  likes     Like[]
   createdAt DateTime   @default(now())
 }
 
@@ -73,12 +71,3 @@ model Payment {
 }
 
 
-model Like {
-  id        String    @id @default(auto()) @map("_id") @db.ObjectId
-  userId    String
-  carId     String    @db.ObjectId
-  car       Car       @relation(fields: [carId], references: [id])
-  createdAt DateTime  @default(now())
-
-  @@unique([userId, carId])
-}

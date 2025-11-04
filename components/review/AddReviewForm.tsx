@@ -18,9 +18,9 @@ import toast from "react-hot-toast";
 const AddReviewForm = ({ userId }: { userId: string | null }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [visible, setVisible] = useState(false);
-  // const params = useParams();
+  const params = useParams();
   const router = useRouter();
-  // const carId = params.id as string;
+  const carId = params.id as string;
   const { user, isLoaded } = useUser();
   const fullName = `${user?.firstName ?? ""} ${user?.lastName ?? ""}`.trim();
 
@@ -44,10 +44,10 @@ const AddReviewForm = ({ userId }: { userId: string | null }) => {
   }, [isLoaded, user]);
   const onSubmit = async (data: ReviewValue) => {
     setIsLoading(true);
-    const reviewData = { ...data, carId: "6909c4e670bca959fad51c22", userId };
+    const reviewData = { ...data, carId, userId };
 
     try {
-      await createUserReview(reviewData, "6909c4e670bca959fad51c22", userId!);
+      await createUserReview(reviewData, carId, userId!);
       toast.success("Review created successfully", {
         position: "bottom-right",
       });
