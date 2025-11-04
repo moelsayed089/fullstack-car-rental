@@ -3,26 +3,12 @@ import { prisma } from "@/lib/db";
 import { ReviewValue } from "@/schema/ReviewSchema";
 import { ICar } from "@/types/car";
 
-export const getAllCars = async (page = 1, limit = 10) => {
-  const skip = (page - 1) * limit;
+export const getAllCars = async () => {
+  const cars = await prisma.car.findMany({
+    orderBy: { createdAt: "desc" },
+  });
 
-  const [cars, total] = await Promise.all([
-    prisma.car.findMany({
-      skip,
-      take: limit,
-      orderBy: { createdAt: "desc" },
-    }),
-    prisma.car.count(),
-  ]);
-
-  return {
-    cars,
-    total,
-    page,
-    totalPages: Math.ceil(total / limit),
-  };
-
-  throw new Error("Failed to fetch cars");
+  return cars;
 };
 
 export const getCarById = async (id: string) => {
@@ -30,10 +16,9 @@ export const getCarById = async (id: string) => {
   return car;
 };
 
-const createCar = async (car: ICar) =>
-  await prisma.car.create({
-    data: car,
-  });
+export const createCar = async (car: ICar) => {
+  return await prisma.car.create({ data: car });
+};
 // create New Review
 
 export const createUserReview = async (
