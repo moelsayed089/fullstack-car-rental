@@ -2,12 +2,12 @@ import { getAllCars } from "@/actions/car.action";
 import ClientCarList from "./ClientCarList";
 
 export default async function CarList() {
-  const { cars, totalPages } = await getAllCars();
+  const { cars } = await getAllCars();
 
   if (!cars || !cars.length) {
     console.log("⚠️ No cars found or Prisma failed to connect");
-    return <div>No cars found</div>;
+    return <div className="p-6 text-center text-black">No cars found</div>;
   }
 
-  return <ClientCarList cars={cars} totalPages={totalPages} />;
+  return <ClientCarList cars={cars} />;
 }

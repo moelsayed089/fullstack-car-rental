@@ -29,7 +29,7 @@ const CarCard = ({ car }: { car: ICar }) => {
 
       <div className="w-full mb-5 mt-5 relative">
         <Image
-          src={car.images[0]}
+          src={"/uploads/car1.png"}
           width={700}
           height={200}
           alt={car.name}

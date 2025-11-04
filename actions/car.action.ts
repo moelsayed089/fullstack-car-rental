@@ -1,6 +1,7 @@
 "use server";
 import { prisma } from "@/lib/db";
 import { ReviewValue } from "@/schema/ReviewSchema";
+import { ICar } from "@/types/car";
 
 export const getAllCars = async (page = 1, limit = 10) => {
   const skip = (page - 1) * limit;
@@ -20,6 +21,8 @@ export const getAllCars = async (page = 1, limit = 10) => {
     page,
     totalPages: Math.ceil(total / limit),
   };
+
+  throw new Error("Failed to fetch cars");
 };
 
 export const getCarById = async (id: string) => {
@@ -27,6 +30,10 @@ export const getCarById = async (id: string) => {
   return car;
 };
 
+const createCar = async (car: ICar) =>
+  await prisma.car.create({
+    data: car,
+  });
 // create New Review
 
 export const createUserReview = async (

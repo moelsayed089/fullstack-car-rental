@@ -14,7 +14,7 @@ const CarImage = ({ car }: { car: ICar }) => {
             width={400}
             height={300}
             className=" rounded-md h-full object-center relative mt-14 z-10 "
-            src={car.images[0]}
+            src={"/uploads/car1.png"}
             alt="Main car"
           />
         </div>
@@ -26,19 +26,6 @@ const CarImage = ({ car }: { car: ICar }) => {
           src={pattern}
           alt="Pattern overlay"
         />
-      </div>
-
-      <div className="grid grid-cols-3 gap-2">
-        {car.images.slice(0, 3).map((img, index) => (
-          <Image
-            key={index}
-            width={200}
-            height={200}
-            className="w-full h-full md:h-[110px] object-center rounded-sm bg-gray-100 p-4"
-            src={img}
-            alt={`Car ${index}`}
-          />
-        ))}
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ model Car {
   fuel      String
   capacity  Int
   gearbox   String
-  images    String[]
+  
   reviews   Review[]
   rentals   Rental[]
   likes     Like[]

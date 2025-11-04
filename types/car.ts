@@ -6,5 +6,4 @@ export interface ICar {
   fuel: string;
   capacity: number;
   gearbox: string;
-  images: string[];
 }
