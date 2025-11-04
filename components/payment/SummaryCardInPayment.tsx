@@ -19,7 +19,7 @@ const SummaryCardInPayment = async ({ carId }: { carId: string }) => {
             {carDetails?.name ?? "Car Name"}
           </p>
           <Image
-            src={carDetails?.images[0] ?? "/uploads/image1.png"}
+            src={"/uploads/car1.png"}
             width={300}
             height={100}
             alt={carDetails?.name ?? "Car Image"}
