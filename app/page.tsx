@@ -18,7 +18,7 @@ export default async function Home({
       <HeaderSection />
       <PickAndDropWrapper />
       <AddReviewForm userId={userId} />
-      {/* <CarList page={page} /> */}
+      <CarList />
     </div>
   );
 }
