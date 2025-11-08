@@ -27,9 +27,9 @@ const CarCard = ({ car }: { car: ICar }) => {
         <p className="text-red-500">like</p>
       </div>
 
-      {/* <div className="w-full mb-5 mt-5 relative">
+      <div className="w-full mb-5 mt-5 relative">
         <Image
-          src={"/uploads/car1.png"}
+          src={car.images?.[0]}
           width={700}
           height={200}
           alt={car.name}
@@ -38,7 +38,7 @@ const CarCard = ({ car }: { car: ICar }) => {
         <div className="absolute bottom-0 right-0 w-full h-full bg-linear-to-t from-white/50 to-transparent blur-[px]">
           {" "}
         </div>
-      </div> */}
+      </div>
 
       <div className="flex justify-between mt-2 mb-5 text-gray-400 font-medium">
         <p className="flex items-center gap-2">

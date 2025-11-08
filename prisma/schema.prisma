@@ -13,6 +13,7 @@ model Car {
   name      String
   type      String
   price     Float
+  images String[]
   fuel      String
   capacity  Int
   gearbox   String

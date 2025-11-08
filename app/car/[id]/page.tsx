@@ -1,6 +1,6 @@
 import { getCarById } from "@/actions/car.action";
 import CarInfo from "@/components/car/CarDetails";
-// import CarImage from "@/components/car/CarImage";
+import CarImage from "@/components/car/CarImage";
 import Reviews from "@/components/review/Reviews";
 const CarDetailsPage = async ({ params }: { params: { id: string } }) => {
   const { id } = await params;
@@ -11,7 +11,7 @@ const CarDetailsPage = async ({ params }: { params: { id: string } }) => {
       <section className="flex flex-col">
         <div className="bg-gray-100 mt-22">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-5 max-w-7xl mx-auto">
-            {/* <CarImage car={CarDetails} /> */}
+            <CarImage car={CarDetails} />
             <CarInfo car={CarDetails} />
           </div>
           <Reviews carId={id} />

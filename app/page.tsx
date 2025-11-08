@@ -1,3 +1,4 @@
+import AddCarForm from "@/components/car/AddCar";
 import HeaderSection from "@/components/layout/HeaderSection";
 import PickAndDropWrapper from "@/components/pick-up&drop-off/PickAndDropWrapper";
 import AddReviewForm from "@/components/review/AddReviewForm";
@@ -10,6 +11,8 @@ export default async function Home() {
       <HeaderSection />
       <PickAndDropWrapper />
       <AddReviewForm userId={userId} />
+
+      {userId === "user_34vFrN7CujoM9aglthnbMRNdMj6" && <AddCarForm />}
     </div>
   );
 }

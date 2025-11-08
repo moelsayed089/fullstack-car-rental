@@ -7,17 +7,20 @@ interface InputTextWrapperProps {
   className?: string;
   register?: UseFormRegisterReturn;
   value?: string;
+  name?: string;
 }
 
 const InputTextWrapper = ({
   value,
   type,
   placeholder,
+  name,
   className,
   register,
 }: InputTextWrapperProps) => {
   return (
     <InputText
+      name={name}
       value={value}
       type={type}
       placeholder={placeholder}

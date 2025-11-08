@@ -3,6 +3,7 @@ import ClientCarList from "./ClientCarList";
 
 export default async function CarList() {
   const { cars } = await getAllCars();
+  console.log(cars);
 
   if (!cars || !cars.length) {
     console.log("⚠️ No cars found or Prisma failed to connect");

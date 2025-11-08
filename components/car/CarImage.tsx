@@ -11,10 +11,10 @@ const CarImage = ({ car }: { car: ICar }) => {
         </h1>
         <div className="flex items-center justify-center">
           <Image
-            width={400}
-            height={300}
-            className=" rounded-md h-full object-center relative mt-14 z-10 "
-            src={"/uploads/car1.png"}
+            width={450}
+            height={400}
+            className=" rounded-md  object-cover relative mt-14 z-10 p-2"
+            src={car.images?.[0]}
             alt="Main car"
           />
         </div>
@@ -27,6 +27,19 @@ const CarImage = ({ car }: { car: ICar }) => {
           alt="Pattern overlay"
         />
       </div>
+
+      {/* <div className="grid grid-cols-3 gap-2">
+        {car.images.slice(0, 3).map((img, index) => (
+          <Image
+            key={index}
+            width={200}
+            height={200}
+            className="w-full object-cover rounded-md bg-blue-500 p-4"
+            src={img}
+            alt={`Car ${index}`}
+          />
+        ))}
+      </div> */}
     </div>
   );
 };
